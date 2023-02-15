@@ -1,0 +1,56 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction</title>
+  <style>
+    body{
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="color: aliceblue; font-size: 40px;"><span style="color: red;">Stock Predicting </span>website</h2>
+   <nav class="test"  style="position: absolute; top: 0;right: 0;">
+     
+      <ul>
+    
+
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: aliceblue;" href="index">Home</a></li>
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: aliceblue;" href="training">training</a></li> 
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: aliceblue;" href="team">team</a></li>
+      </ul>
+   </nav>
+  <div style="display: flex;">
+  <div style="height: auto;display: inline-block;">
+  <img src="data:image/png;base64,{{ image_base64 }}"/>
+  </div>
+  <div style="height: auto;display: inline-block;color: aliceblue;">
+    {{datas|safe}}
+  </div>
+
+
+  </div>
+  <form method="post" action="prediction" enctype="multipart/form-data" style="text-align: center;" >
+    {% csrf_token %}
+    
+    <input style="display: inline;margin-left: 20px;size: 20px;"   type="number" step="any" name="open" placeholder="open" required><br><br>
+    
+    <input style="display: inline;margin-left: 20px;size: 20px;" type="number" step="any"  name="low" placeholder="low" required><br><br>
+    
+    <input type="number" style="display: inline;margin-left: 20px;size: 20px;"  step="any" name="high" placeholder="high" required><br><br>
+    
+    <input type="number" style="display: inline;margin-left: 20px;size: 20px;"  name="volume" placeholder="volume" required><br><br>
+    <input type="submit" value="predict " >
+    <p> The close price of the next day is :{{data}}</p>
+  </form>
+
+
+  
+ 
+  
+</body>
+</html>

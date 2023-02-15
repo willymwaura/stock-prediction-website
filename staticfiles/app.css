@@ -1,0 +1,55 @@
+
+input{
+    width: 400px;
+    height: 40px;
+    background-color: royalblue;
+    font-weight: 1000;
+    font-size: medium;
+}
+.test {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+.test ul li a{
+color:red;
+}
+
+  
+.test li {
+    display: inline-block;
+    margin-left: 20px;
+    size: 10px;
+  }
+span{
+    color: red;
+}
+h2{
+    font-size: 40 px;
+    color: white;
+}
+
+form{
+    border-bottom: 50px;
+
+}
+.none{
+    width: auto;
+    height: 350px;
+}
+.two{
+    position: relative;
+    left: 35%;
+
+}
+p{
+    position: relative;
+    left: 40%;
+    font-size: 40px;
+    padding-top: 15%;
+
+}
+.search{
+    background-color:rosybrown;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose model to predict</title>
+</head>
+<body>
+  <style>
+    body{
+      background-color: grey;
+    }
+  </style>
+    <form action="prediction" method="post" style="text-align: center;font-size: 20px;">
+      <p style="color: aliceblue;">choose the data that you trained the model with</p>
+        {% csrf_token %}
+        {% for model in data %}
+         {{model.id}}
+          <input type="checkbox" name="selected_model" value="{{ model.id }}"> {{ model.csv_name }} <br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+      </form>
+    
+</body>
+</html>
