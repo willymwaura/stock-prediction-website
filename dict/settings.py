@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-63q9h(znz#1e)m&74w9#_n5nakdb!qx*fqhfi=&k7e3bwmaia$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+CORS_ALLOWED_ORIGINS=["*"]
+
 
 
 # Application definition
@@ -48,6 +50,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -70,10 +73,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dict.wsgi.application'
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
@@ -82,6 +87,9 @@ DATABASES = {
         
     }
 }
+import dj_database_url
+DATABASE_URL="postgresql://postgres:tC6r6EEtGptSRrov0yT4@containers-us-west-32.railway.app:5602/railway:5602/railway"
+DATABASES['default']=dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
 
 
 # Password validation
