@@ -316,7 +316,8 @@ def prediction(request):
     csv_file=Predicted.objects.latest("id").csv_file
     df = pd.read_csv(csv_file,header=None)
     df.columns = ['Date', 'Predicted','Actual']
-    df['Date'] = pd.to_datetime(df['Date'])
+  
+    df['Date'] = pd.to_datetime(df['Date'], errors='coerce', format='%Y-%m-%d %H:%M:%S')
     df = df.drop('Predicted', axis=1)
 
     # Generate the graph using pandas and matplotlib
