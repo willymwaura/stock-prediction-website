@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.10-alpine
+FROM python:3.2-alpine
 # add and run as non-root user.
 RUN adduser -D myuser
 
