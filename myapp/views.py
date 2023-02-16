@@ -64,7 +64,7 @@ def train_model(request):
                             parse_dates=True,
                             infer_datetime_format=True)
 
-        df_final=df_final.head(1500)
+        df_final=df_final.head(1000)
 
         df_final.shape
 
