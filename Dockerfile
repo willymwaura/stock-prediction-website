@@ -15,8 +15,7 @@ WORKDIR /app
 COPY ./requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN sudo apt-get install gcc
-RUN sudo apt-get install g++
+
 RUN pip install -r requirements.txt
 
 # copy project
