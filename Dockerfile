@@ -17,7 +17,9 @@ RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install numpy
 RUN pip install pandas
-RUN pip installmatplotlib
+RUN pip install matplotlib
+RUN pip install tensorflow
+RUN pip install scikit-learn
 
 RUN pip install -r requirements.txt
 
