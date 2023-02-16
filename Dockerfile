@@ -29,4 +29,4 @@ COPY . .
 
 
 #run the server
-CMD gunicorn dict.wsgi:application --bind 0.0.0.0:$PORT
+CMD  python manage.py makemigrations && python manage.py migrate && gunicorn dict.wsgi:application --bind 0.0.0.0:$PORT
