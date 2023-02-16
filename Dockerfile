@@ -13,6 +13,7 @@ ENV DEBUG 0
 WORKDIR /app
 # install dependencies
 COPY ./requirements.txt .
+RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
 
 # copy project
