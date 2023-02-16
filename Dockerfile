@@ -15,9 +15,11 @@ WORKDIR /app
 COPY ./requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
+RUN sudo apt-get install gcc
+RUN sudo apt-get install g++
 RUN pip install -r requirements.txt
 
 # copy project
 COPY . .
 #run the server
-CMD gunicorn streetview.wsgi:application --bind 0.0.0.0:8080
+CMD gunicorn dict.wsgi:application --bind 0.0.0.0:8080
