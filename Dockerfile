@@ -1,7 +1,7 @@
 # pull official base image
 FROM python:3
 # add and run as non-root user.
-RUN adduser -D myuser
+
 
 EXPOSE 8080
 # set environment variables
