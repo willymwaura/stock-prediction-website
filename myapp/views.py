@@ -2,7 +2,7 @@
 from django.http import response ,HttpResponse
 from django.shortcuts import render
 import requests
-from .models import Data ,Predicted
+from .models import Data ,Predicted,Ids
 import pickle
 
 
@@ -71,6 +71,8 @@ def train_model(request):
         df_final.describe()
 
         df_final.isnull().values.any()
+       
+
 
         df_final['Close'].plot()
 
@@ -295,47 +297,67 @@ def train_model(request):
         #close_price = model.predict(test_data)
     
 def prediction(request):
-    #id =request.POST['selected_model']
-    #print(id)
-   
-    csv_file=Predicted.objects.latest("id").csv_file
+    id_doc =request.POST.get('selected_model',False)
+    print(id_doc)
+    if id_doc == False:
+        print("id_doc is False")
+        id_doc=Ids.objects.latest("id").doc_id
+    else:
+        print("id_doc is not False")
+        a=Ids(doc_id=id_doc)
+        a.save()
+        id_doc=id_doc
+        print(id_doc)
+  
+    my_csv = Predicted.objects.get(id=id_doc)
+    csv_file=my_csv.csv_file
     data = pd.read_csv(csv_file)
     data=data.head(5).to_html()
+    
+
+    
+    
+    
+    
+    #csv_file=Predicted.objects.latest("id").csv_file
+   
     a=request.POST.get('high',False)
     b=request.POST.get('low',False)
     c=request.POST.get('open',False)
     d=request.POST.get('volume',False)
-    a=float(a)
+    d=float(a)
     b=float(b)
     c=float(c)
     
-    
-   
-    
-    
-    csv_file=Predicted.objects.latest("id").csv_file
-    df = pd.read_csv(csv_file,header=None)
-    df.columns = ['Date', 'Predicted','Actual']
+    my_csv = Predicted.objects.get(id=id_doc)
+    csv_file=my_csv.csv_file
   
-    df['Date'] = pd.to_datetime(df['Date'], errors='coerce', format='%Y-%m-%d %H:%M:%S')
+    #csv_file=Predicted.objects.latest("id").csv_file
+    df = pd.read_csv(csv_file,header=None)
+    df=df.head(10)
+    
+    df.columns = ['Date', 'Predicted','Actual']
+    #df['Date'] = pd.to_datetime(df['Date'], errors='coerce', format='%Y-%m-%d %H:%M:%S')
     df = df.drop('Predicted', axis=1)
 
     # Generate the graph using pandas and matplotlib
     plt.plot(df['Date'], df['Actual'],'-')
+    plt.plot(df['Date'], df['Actual'], 's--', linewidth=2, markersize=8, label='Actual', linestyle='--', color='red', alpha=0.7)
     plt.xlabel('Date')
     plt.ylabel('Actual')
     plt.title('Graph of Actual vs Date')
     plt.xticks(df['Date'], rotation=90)
    
     plt.tight_layout()
-    e= a+b+c
+    e= d+b+c
 
     # Save the graph to a buffer
     buffer = BytesIO()
-    e=e+2.3
+   
     plt.savefig(buffer, format='png')
     e=e/3
     buffer.seek(0)
+    e=e*1.13
     image_png = buffer.getvalue()
     e=round(e,1)
     buffer.close()
