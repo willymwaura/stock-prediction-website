@@ -8,12 +8,21 @@
 </head>
 <body>
   <style>
-    body{
-      background-color: grey;
-    }
+ 
   </style>
+  <h2 style="color: blue; font-size: 40px;"><span style="color: red;">Stock Predicting </span>website</h2>
+  <nav class="test"  style="position: absolute; top: 0;right: 0;">
+    
+     <ul>
+   
+
+  <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: red;" href="index">Home</a></li>
+  <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: red;" href="training">training</a></li> 
+  <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: red;" href="team">team</a></li>
+     </ul>
+  </nav>
     <form action="prediction" method="post" style="text-align: center;font-size: 20px;">
-      <p style="color: aliceblue;">choose the data that you trained the model with</p>
+      <p style="color: black;">choose the data that you trained the model with</p>
         {% csrf_token %}
         {% for model in data %}
          {{model.id}}
