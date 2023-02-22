@@ -87,7 +87,7 @@ DATABASES = {
         
     }
 }
-import dj_database_url
+#import dj_database_url
 '''
 
 DATABASE_URL="postgresql://postgres:tC6r6EEtGptSRrov0yT4@containers-us-west-32.railway.app:5602/railway:5602/railway"

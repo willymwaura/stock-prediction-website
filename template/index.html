@@ -12,22 +12,52 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width-initial-scale=1.0">
+   <style>
+      h1 {
+  --s: 0.1em;   /* the thickness of the line */
+  --c: #2c4bff; /* the color */
+  
+  color: grey;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+}
+h1:hover {--_p: 100%}
+
+
+
+h1 {
+  font-family: cursive;
+  font-size: 40px;
+  cursor: pointer;
+  height: 150px;
+  margin: 0;
+  display: grid;
+ 
+  place-content: center;
+}
+   </style>
    
    
    <title>STock predict website</title>
 </head>
 <body>
-   <h2 style="color: aliceblue; font-size: 40px;"><span style="color: red;">Stock Predicting </span>website</h2>
+   <h2 style=" font-size: 60px;color: aliceblue;font-family: cursive;"><span style="color: red;">MarketPredictor </span>Pro</h2>
    <nav class="test"  style="position: absolute; top: 0;right: 0;">
      
       <ul>
     
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: aliceblue;" href="training">training</a></li> 
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: aliceblue;" href="model">prediction</a></li>
+   <li style="display: inline;margin-left: 20px;size: 20px;font-family: cursive;"><a style="color: white" href="training">training</a></li> 
+   <li style="display: inline;margin-left: 20px;size: 20px;font-family: cursive;"><a style="color: white;" href="model">prediction</a></li>
 
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: aliceblue;" href="team">team</a></li>
+   <li style="display: inline;margin-left: 20px;size: 20px;font-family: cursive;"><a style="color: white;" href="team">team</a></li>
       </ul>
    </nav>
+   <h1>We help you predict future stock market prices </h1>
 
 </body>
 </html>

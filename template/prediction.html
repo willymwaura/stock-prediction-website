@@ -5,32 +5,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      background-color: black;
+    }
+  </style>
   <title>Prediction</title>
  
 </head>
 <body>
-  <h2 style="color: blue; font-size: 40px;"><span style="color: red;">Stock Predicting </span>website</h2>
+  <h2 style=" font-size: 60px;font-family: cursive;color: white;"><span style="color: red;">MarketPredictor </span>Pro</h2>
    <nav class="test"  style="position: absolute; top: 0;right: 0;">
      
       <ul>
     
 
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: red;" href="index">Home</a></li>
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: red;" href="training">training</a></li> 
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: red;" href="team">team</a></li>
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color:white;" href="index">Home</a></li>
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: white;" href="training">training</a></li> 
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: white;" href="team">team</a></li>
       </ul>
    </nav>
-  <div style="display: flex;">
-  <div style="height: auto;display: inline-block;">
+  <div style="display: flex;color: white;">
+  <div style="height: auto;display: inline-block;color: white;">
   <img src="data:image/png;base64,{{ image_base64 }}"/>
   </div>
-  <div style="height: auto;display: inline-block;color:black;">
+  <div style="height: auto;display: inline-block;color:white;">
     {{datas|safe}}
   </div>
 
 
   </div>
-  <form method="post" action="prediction" enctype="multipart/form-data" style="text-align: center;" >
+  <form method="post" action="prediction" enctype="multipart/form-data" style="text-align: center; color: white;" >
     {% csrf_token %}
     
     <input style="display: inline;margin-left: 20px;size: 20px;"   type="number" step="any" name="open" placeholder="open" required><br><br>
@@ -41,7 +46,7 @@
     
     <input type="number" style="display: inline;margin-left: 20px;size: 20px;"  name="volume" placeholder="volume" required><br><br>
     <input type="submit" value="predict " >
-    <p> The close price of the next day is :{{data}}</p>
+    <p style="color: white;"> The close price of the next day is :{{data}}</p>
   </form>
 
 

@@ -19,6 +19,9 @@
 			0% { transform: rotate(0deg); }
 			100% { transform: rotate(360deg); }
 		}
+    body{
+      background-color: black;
+    }
 	</style>
  
   <script>
@@ -85,12 +88,12 @@
       width: 40%;
     }
     th, td {
-      border: 1px solid black;
+      border: 1px solid white;
       padding: 8px;
       text-align: left;
     }
     th {
-      background-color:white;
+      background-color:black;
     }
     
   
@@ -101,20 +104,20 @@
 </head>
 <title>Training the model</title>
 <body>
-  <h2 style="color: blue; font-size: 40px;"><span style="color: red;">Stock Predicting </span>website</h2>
+  <h2 style=" font-size: 60px;font-family: cursive;color: white;"><span style="color: red;">MarketPredictor </span>Pro</h2>
    <nav class="test"  style="position: absolute; top: 0;right: 0;">
      
       <ul>
     
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: blue;" href="index">Home</a></li> 
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: blue;" href="model">prediction</a></li>
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: white;" href="index">Home</a></li> 
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: white;" href="model">prediction</a></li>
 
-   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: blue;" href="team">team</a></li>
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: white;" href="team">team</a></li>
       </ul>
    </nav>
   <div style="text-align: center;">
  
-  <h3>Choose the csv to open in the table and view graph </h3>
+  <h3 style="color: white;">Choose the csv to open in the table and view graph </h3>
   <input type="file" id="fileInput" />
   
  
@@ -122,18 +125,18 @@
   
   <button onclick="displayData()">Display Data</button>
   </div>
-  <div style="display: flex;">
+  <div style="display: flex;color: white;">
     <div style="height: auto;display: inline-block;">
   <div id="display"></div>
   </div>
-  <div style="height: 200px;display: inline-block;width: 560px;">
+  <div style="height: 200px;display: inline-block;width: 560px;color: white;">
   <canvas id="graph"   ></canvas>
   </div>
   </div>
   <div style="text-align: center;">
   
   
-    <h3>Choose the CSV file that will be used to train the model</h3>
+    <h3 style="color: white;">Choose the CSV file that will be used to train the model</h3>
     <form method="post" action="{% url 'train' %}" enctype="multipart/form-data" name="file">
       {% csrf_token %}
       <input type="file" name="csv" />
