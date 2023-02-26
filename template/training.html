@@ -20,8 +20,17 @@
 			100% { transform: rotate(360deg); }
 		}
     body{
-      background-color: black;
+      background-image: url(static/hero-bg.jpg);
     }
+    footer{
+      background-color: darkblue;
+
+    }
+    section{
+      background-color: darkblue;
+      height: 30px;
+    }
+    
 	</style>
  
   <script>
@@ -104,7 +113,7 @@
 </head>
 <title>Training the model</title>
 <body>
-  <h2 style=" font-size: 60px;font-family: cursive;color: white;"><span style="color: red;">MarketPredictor </span>Pro</h2>
+  <h2 style=" font-size: 40px;font-family: cursive;color: white;">MarketPredictorPro</h2>
    <nav class="test"  style="position: absolute; top: 0;right: 0;">
      
       <ul>
@@ -145,7 +154,11 @@
       <div id="loader" style="display:none;"></div>
       <div id="result-msg"></div>
     </form>
-    </div>
+   
+       
+
+    
+
     <script>
       $(document).ready(function() {
         $('form').on('submit', function(event) {
