@@ -29,7 +29,7 @@
       <p style="color: white;">choose the data that you trained the model with</p>
         {% csrf_token %}
         {% for model in data %}
-         {{model.id}}
+      
           <input style="color: white;" type="checkbox" name="selected_model" value="{{ model.id }}"> {{ model.csv_name }} <br>
         {% endfor %}
         <input type="submit" value="Submit">
