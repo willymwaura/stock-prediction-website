@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1173,7 +1174,7 @@ address.footer-text {
 
         <div class="navbar-top">
           <a href="#" class="logo">
-            <img src="..static/logo-light.svg" width="74" height="24" alt="Adex home">
+            <img src="static/logo-light.svg" width="74" height="24" alt="Adex home">
           </a>
 
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
@@ -1292,44 +1293,17 @@ address.footer-text {
                 <li class="slider-item">
 
                   <figure class="img-holder" style="--width: 575; --height: 550;">
-                    <img src="static/hero-slide-1.jpg" width="575" height="550" alt="" class="img-cover">
+                    <img src="static/bg-2.jpg" width="575" height="550" alt="" class="img-cover">
                   </figure>
 
                 </li>
 
-                <li class="slider-item">
-
-                  <div class="hero-card">
-                    <figure class="img-holder" style="--width: 575; --height: 550;">
-                      <img src="static/hero-slide-2.jpg" width="575" height="550" alt="hero banner"
-                        class="img-cover">
-                    </figure>
-
-                    <button class="play-btn" aria-label="play adex intro">
-                      <ion-icon name="play" aria-hidden="true"></ion-icon>
-                    </button>
-                  </div>
-
-                </li>
-
-                <li class="slider-item">
-
-                  <figure class="img-holder" style="--width: 575; --height: 550;">
-                    <img src="static/hero-slide-3.jpg" width="575" height="550" alt="" class="img-cover">
-                  </figure>
-
-                </li>
+               
 
               </ul>
             </div>
 
-            <button class="slider-btn prev" aria-label="slide to previous" data-slider-prev>
-              <ion-icon name="arrow-back"></ion-icon>
-            </button>
-
-            <button class="slider-btn next" aria-label="slide to next" data-slider-next>
-              <ion-icon name="arrow-forward"></ion-icon>
-            </button>
+          
 
           </div>
 
@@ -1586,7 +1560,7 @@ address.footer-text {
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+  <script src="{% static 'js/script.js' %}"></script>
 
   <!-- 
     - ionicon
