@@ -1,0 +1,150 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+		#loader {
+			border: 16px solid #f3f3f3;
+			border-top: 16px solid #3498db;
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+			animation: spin 2s linear infinite;
+			margin: auto;
+			margin-top: 50px;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+    body{
+      background-image: url(static/hero-bg.jpg);
+    }
+    footer{
+      background-color: darkblue;
+
+    }
+    section{
+      background-color: darkblue;
+      height: 30px;
+    }
+    
+	</style>
+ 
+  <script>
+    function displayData() {
+      let fileInput = document.getElementById("fileInput");
+      let file = fileInput.files[0];
+
+      Papa.parse(file, {
+        header: true,
+        complete: function(results) {
+          let data = results.data;
+          let display = document.getElementById("display");
+          let table = "<table><tr><th>Date</th><th>Open</th><th>Low</th><th>High</th><th>Close</th><th>Volume</th></tr>";
+          let dates = [];
+          let open = [];
+          for (let i = 0; i < 10; i++) {
+            table += "<tr>";
+            table += "<td>" + data[i]["Date"] + "</td>";
+            table += "<td>" + data[i]["Open"] + "</td>";
+            table += "<td>" + data[i]["Low"] + "</td>";
+            table += "<td>" + data[i]["High"] + "</td>";
+            table += "<td>" + data[i]["Close"] + "</td>";
+            table += "<td>" + data[i]["Volume"] + "</td>";
+            table += "</tr>";
+            dates.push(data[i]["Date"]);
+            open.push(data[i]["Open"]);
+          }
+          table += "</table>";
+          display.innerHTML = table;
+          
+          let graph = document.getElementById("graph");
+          let chart = new Chart(graph, {
+            type: 'line',
+            data: {
+              labels: dates,
+              datasets: [{
+                label: 'Open Price',
+                data: open,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+        }
+      });
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+  <style type="text/css">
+ 
+    table {
+      border-collapse: collapse;
+      width: 40%;
+    }
+    th, td {
+      border: 1px solid white;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color:black;
+    }
+    
+  
+  
+    
+ 
+  </style>
+</head>
+<title>Training the model</title>
+<body>
+  <h2 style=" font-size: 40px;font-family: cursive;color: white;">MarketPredictorPro</h2>
+   <nav class="test"  style="position: absolute; top: 0;right: 0;">
+     
+      <ul>
+    
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: white;" href="index">Home</a></li> 
+
+   <li style="display: inline;margin-left: 20px;size: 20px;"><a style="color: white;" href="team">team</a></li>
+      </ul>
+   </nav>
+  <div style="text-align: center;">
+ 
+  <h3 style="color: white;">Choose the csv to open in the table and view graph </h3>
+  <input type="file" id="fileInput" />
+  
+ 
+  
+  
+  <button onclick="displayData()">Display Data</button>
+  </div>
+  <div style="display: flex;color: white;">
+    <div style="height: auto;display: inline-block;">
+  <div id="display"></div>
+  </div>
+  <div style="height: 200px;display: inline-block;width: 560px;color: white;">
+  <canvas id="graph"   ></canvas>
+  </div>
+  </div>
+  <div style="text-align: center;">
+  
+</body>
+</html>
+
+
+

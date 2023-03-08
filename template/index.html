@@ -26,9 +26,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- 
-    - custom css link
-  -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+button{
+  padding: 25px 30px;
+  background-color: #050801;
+  color: #03e9f4;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+button:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+  </style>
+  
  <style>
    /*-----------------------------------*\
   #main.css
@@ -1022,6 +1047,7 @@ font-weight: var(--fw-700);
 
 
 
+
 /**
  * CTA
  */
@@ -1194,9 +1220,7 @@ address.footer-text {
             <a href="training" class="navbar-link">Training</a>
           </li>
 
-          <li>
-            <a href="model" class="navbar-link">Prediction</a>
-          </li>
+        
 
           <li>
             <a href="team" class="navbar-link">Team</a>
@@ -1280,6 +1304,9 @@ address.footer-text {
             <p class="hero-text">
               We’re a creative company that helps you  Make informed decisions with our cutting-edge market analysis. .
             </p>
+            <button><a href="training">  CLICK TO TRAIN YOUR MODEL</a>
+             
+            </button>	
 
            
 
@@ -1291,7 +1318,6 @@ address.footer-text {
               <ul class="slider-container" data-slider-container>
 
                 <li class="slider-item">
-2
                   <figure class="img-holder" style="--width: 575; --height: 550;">
                     <img src="static/bg-2.jpg" width="575" height="550" alt="" class="img-cover">
                   </figure>
@@ -1475,7 +1501,9 @@ address.footer-text {
                       <spna class="span h5">we give accurate predictions</spna>
                     </button>
                   </h3>
-
+                  <button > <a href="display"> CLICK TO TRAIN VISUALIZE YOUR CSV DATA</a>
+                    
+                  </button>	
                 
 
                 </div>
@@ -1562,6 +1590,7 @@ address.footer-text {
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+ 
 </body>
 
 </html>

@@ -32,8 +32,8 @@ def training(request):
 
         #return render(request,'search.html',{'words':response})
 
-def test(request):
-    return render(request,'test.html')
+def display(request):
+    return render(request,'display.html')
 def team(request):
     return render(request,'team.html')
 
