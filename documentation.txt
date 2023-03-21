@@ -1,0 +1,23 @@
+Here's a step-by-step guide to run the code:
+Install Python: First, you need to have Python installed on your computer. If you don't have it already, you can download and install it from the official Python website: https://www.python.org/downloads/
+Open the project folder in your IDE: Next, open the folder containing the project files in your preferred IDE (Integrated Development Environment), such as PyCharm, Visual Studio Code, or any other IDE of your choice.
+Install project dependencies: To install the project dependencies, you can use the requirements.txt file that is included in the project folder. Open your terminal/command prompt and navigate to the project directory. Then, run the following command:
+
+
+pip install -r requirements.txt
+
+
+
+This will install all the required packages and libraries that the project depends on.
+Run the server: Once the dependencies are installed, you can start the server. In the same terminal/command prompt window, run the following command:
+
+python manage.py runserver
+
+
+
+
+This will start the server and give you a URL that you can use to access the website.
+Access the website: Copy the URL provided in the terminal and paste it into your web browser. The website should now be up and running, and you should be able to use it to predict stock prices.
+That's it! This should be enough to get your stock predicting website up and running.
+
+
