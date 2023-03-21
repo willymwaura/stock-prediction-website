@@ -20,6 +20,7 @@ RUN pip install pandas
 RUN pip install matplotlib
 RUN pip install tensorflow
 RUN pip install scikit-learn
+ RUN pip install nvidia-tensorrt
 
 RUN pip install -r requirements.txt
 
