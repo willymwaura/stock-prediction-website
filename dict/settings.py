@@ -87,11 +87,11 @@ DATABASES = {
         
     }
 }
-#import dj_database_url
-'''
+import dj_database_url
 
-DATABASE_URL="postgresql://postgres:tC6r6EEtGptSRrov0yT4@containers-us-west-32.railway.app:5602/railway:5602/railway"
-DATABASES['default']=dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)'''
+
+DATABASE_URL="postgres://zdzsgdas:rMbInyo0JTMqId4Ypg1PPXSOl5GApYse@surus.db.elephantsql.com/zdzsgdas"
+DATABASES['default']=dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
 
 
 # Password validation
