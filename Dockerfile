@@ -30,4 +30,4 @@ COPY . .
 
 
 #run the server
-CMD python manage.py makemigrations&& python manage.py makemigrations && python manage.py migrate && gunicorn dict.wsgi:application --bind 0.0.0.0:8080
+CMD python manage.py makemigrations&& python manage.py makemigrations && python manage.py migrate && gunicorn dict.wsgi:application --bind 0.0.0.0:$PORT
